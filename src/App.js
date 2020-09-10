@@ -5,9 +5,9 @@ function App() {
     <div className="App">
       <div className="WeatherOptions">
         <WeatherOption optionType="Weather" />
-        <WeatherOption optionType="" />
-        <WeatherOption optionType="Weather" />
-        <WeatherOption optionType="Weather" />
+        <WeatherOption optionType="48HourForecast" />
+        <WeatherOption optionType="Precipitation" />
+        <WeatherOption optionType="Temperature" />
       </div>
     </div>
   );
