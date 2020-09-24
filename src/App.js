@@ -1,4 +1,5 @@
 import React from 'react';
+import { WeatherOption } from './components/weather-options/weather-options'
 
 function App() {
   return (
@@ -12,15 +13,5 @@ function App() {
     </div>
   );
 }
-
-const WeatherOption = (props) => {
-  return (
-    <div>
-      <label htmlFor="">{props.optionType}</label>
-      <input type="checkbox" name={props.optionType} id={props.optionType} />
-    </div>
-  );
-}
-
 
 export default App;
