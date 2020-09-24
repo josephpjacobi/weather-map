@@ -13,11 +13,11 @@ function App() {
   );
 }
 
-const WeatherOption = (optionType) => {
+const WeatherOption = (props) => {
   return (
     <div>
-      <label htmlFor="">{optionType}</label>
-      <input type="checkbox" name={optionType} id={optionType} />
+      <label htmlFor="">{props.optionType}</label>
+      <input type="checkbox" name={props.optionType} id={props.optionType} />
     </div>
   );
 }
