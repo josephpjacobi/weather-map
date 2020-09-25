@@ -1,15 +1,10 @@
 import React from 'react';
-import { WeatherOption } from './components/weather-options/weather-options'
+import { LandingPage } from './components/landing-page/landing-page'
 
 function App() {
   return (
     <div className="App">
-      <div className="WeatherOptions">
-        <WeatherOption optionType="Weather" />
-        <WeatherOption optionType="48HourForecast" />
-        <WeatherOption optionType="Precipitation" />
-        <WeatherOption optionType="Temperature" />
-      </div>
+    <LandingPage/>
     </div>
   );
 }
