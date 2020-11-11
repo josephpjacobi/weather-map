@@ -15,7 +15,7 @@ function App() {
     setZipCode(e.target.value)
   }
 
-  const handleWeatherMapOptionChange = (value) => {
+  const handleWeatherMapChange = (value) => {
     setWeatherOption(value)
   }
 
@@ -30,38 +30,35 @@ function App() {
             onChange={(e) => handleChange(e)}
           ></input>
         </label>
+        <div className="WeatherOptions">
+          <WeatherOption optionType="Weather" />
+          <WeatherOption optionType="48HourForecast" />
+          <WeatherOption optionType="Precipitation" />
+          <WeatherOption optionType="Temperature" />
+        </div>
         <label>
           Weather Options:
           <input
             type="radio"
             value="value1"
-            checked={weatherOption === 'value1'}
-            onChange={() => handleWeatherMapOptionChange('value1')}
-          >
-          </input>
+            checked={weatherOption === "value1"}
+            onChange={() => handleWeatherMapChange("value1")}
+          ></input>
           <input
             type="radio"
             value="value2"
-            checked={weatherOption === 'value2'}
-            onChange={() => handleWeatherMapOptionChange('value2')}
-          >
-          </input>
+            checked={weatherOption === "value2"}
+            onChange={() => handleWeatherMapChange("value2")}
+          ></input>
           <input
             type="radio"
             value="value2"
-            checked={weatherOption === 'value3'}
-            onChange={() => handleWeatherMapOptionChange('value3')}
-          >
-          </input>
+            checked={weatherOption === "value3"}
+            onChange={() => handleWeatherMapChange("value3")}
+          ></input>
         </label>
         <input type="submit" value="Submit" />
       </form>
-      {/* <div className="WeatherOptions">
-        <WeatherOption optionType="Weather" />
-        <WeatherOption optionType="48HourForecast" />
-        <WeatherOption optionType="Precipitation" />
-        <WeatherOption optionType="Temperature" />
-      </div> */}
     </div>
   );
 }
