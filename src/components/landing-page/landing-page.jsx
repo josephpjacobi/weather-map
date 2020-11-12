@@ -43,21 +43,27 @@ export function LandingPage() {
           </label>
         <input
           type="radio"
-          value="value1"
-          checked={weatherOption === "value1"}
-          onChange={() => handleWeatherMapChange("value1")}
+          value="temperature"
+          checked={weatherOption === "temperature"}
+          onChange={() => handleWeatherMapChange("temperature")}
         ></input>
+        <label>
+          Precipitation
+          </label>
         <input
           type="radio"
-          value="value2"
-          checked={weatherOption === "value2"}
-          onChange={() => handleWeatherMapChange("value2")}
+          value="precipitation"
+          checked={weatherOption === "precipitation"}
+          onChange={() => handleWeatherMapChange("precipitation")}
         ></input>
+        <label>
+          Cloud Cover
+          </label>
         <input
           type="radio"
-          value="value2"
-          checked={weatherOption === "value3"}
-          onChange={() => handleWeatherMapChange("value3")}
+          value="cloudCover"
+          checked={weatherOption === "cloudCover"}
+          onChange={() => handleWeatherMapChange("cloudCover")}
         ></input>
       </label>
       <input type="submit" value="Submit" />
