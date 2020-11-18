@@ -69,3 +69,5 @@ export function LandingPage() {
     </form>
     );
   }
+
+export default LandingPage;
