@@ -1,0 +1,12 @@
+.search-text-box{
+    display: flex;
+    justify-content: space-evenly;
+    border: 3px black;
+    border-style: outset;
+    
+}
+
+.weather-options-container{
+    display: flex;
+    justify-content: space-evenly;
+}

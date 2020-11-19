@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { WeatherOption } from '../weather-options/weather-options';
+import './landing-page.css';
 
 export function LandingPage() {
     const [zipcode, setZipCode] = useState('')
@@ -23,24 +24,24 @@ export function LandingPage() {
       <form onSubmit={(e) => handleSubmit(e)}>
         <label>
           Search:
-          <input
+          <input className="search-text-box"
             type="text"
             value={zipcode}
             onChange={(e) => handleChange(e)}
           ></input>
         </label>
-        <div className="WeatherOptions">
+        <div className="weather-options-container">
           <WeatherOption optionType="Weather" />
           <WeatherOption optionType="48HourForecast" />
           <WeatherOption optionType="Precipitation" />
           <WeatherOption optionType="Temperature" />
         </div>
-        <label>
+        <label className="weather-options-label">
           Weather Options:
-          <label>
+          <label className="temperature-label">
           Temperature
           </label>
-        <input
+        <input className="temperature-radio-button"
           type="radio"
           value="temperature"
           checked={weatherOption === "temperature"}
@@ -49,7 +50,7 @@ export function LandingPage() {
         <label>
           Precipitation
           </label>
-        <input
+        <input className="precipitation-radio-button"
           type="radio"
           value="precipitation"
           checked={weatherOption === "precipitation"}
@@ -58,14 +59,15 @@ export function LandingPage() {
         <label>
           Cloud Cover
           </label>
-        <input
+        <input className="cloud-cover-radio-button"
           type="radio"
           value="cloudCover"
           checked={weatherOption === "cloudCover"}
           onChange={() => handleWeatherMapChange("cloudCover")}
         ></input>
       </label>
-      <input type="submit" value="Submit" />
+      <input className="submit-button"
+      type="submit" value="Submit" />
     </form>
     );
   }
