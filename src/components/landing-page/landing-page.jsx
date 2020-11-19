@@ -1,19 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import './landing-page.css'
 import { WeatherOption } from '../weather-options/weather-options';
-import './landing-page.css';
+import weatherData  from '../../data';
 
-export function LandingPage() {
-    const [zipcode, setZipCode] = useState('')
+
+export function LandingPage(props) {
+    const { getWeather } = props
+    const [city, setCity] = useState('')
     const [weatherOption, setWeatherOption] = useState('value1')
+   
   
-    const handleSubmit = (e) => {
-      console.log(zipcode);
-      console.log(weatherOption);
+    const handleSubmit = async (e) => {
       e.preventDefault();
-    }
+      if (weatherData[city]) {
+        await getWeather(weatherData[city]);
+      } else console.log("No Results");
+    };
   
     const handleChange = (e) => {
-      setZipCode(e.target.value)
+      setCity(e.target.value)
     }
   
     const handleWeatherMapChange = (value) => {
@@ -69,6 +74,7 @@ export function LandingPage() {
       <input className="submit-button"
       type="submit" value="Submit" />
     </form>
+
     );
   }
 
