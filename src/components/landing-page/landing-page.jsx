@@ -3,6 +3,7 @@ import './landing-page.css'
 import { WeatherOption } from '../weather-options/weather-options';
 import weatherData  from '../../data';
 
+
 export function LandingPage(props) {
     const { getWeather } = props
     const [city, setCity] = useState('')
@@ -25,49 +26,55 @@ export function LandingPage(props) {
     }
   
     return (
-      <div>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <label>
-            Search:
-            <input
-              type="text"
-              value={city}
-              onChange={(e) => handleChange(e)}
-            ></input>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <label>
+          Search:
+          <input className="search-text-box"
+            type="text"
+            value={zipcode}
+            onChange={(e) => handleChange(e)}
+          ></input>
+        </label>
+        <div className="weather-options-container">
+          <WeatherOption optionType="Weather" />
+          <WeatherOption optionType="48HourForecast" />
+          <WeatherOption optionType="Precipitation" />
+          <WeatherOption optionType="Temperature" />
+        </div>
+        <label className="weather-options-label">
+          Weather Options:
+          <label className="temperature-label">
+          Temperature
           </label>
-          <div>
-            <WeatherOption optionType="Weather" />
-            <WeatherOption optionType="48HourForecast" />
-            <WeatherOption optionType="Precipitation" />
-            <WeatherOption optionType="Temperature" />
-          </div>
-          <label>
-            Weather Options:
-            <label>Temperature</label>
-            <input
-              type="radio"
-              value="temperature"
-              checked={weatherOption === "temperature"}
-              onChange={() => handleWeatherMapChange("temperature")}
-            ></input>
-            <label>Precipitation</label>
-            <input
-              type="radio"
-              value="precipitation"
-              checked={weatherOption === "precipitation"}
-              onChange={() => handleWeatherMapChange("precipitation")}
-            ></input>
-            <label>Cloud Cover</label>
-            <input
-              type="radio"
-              value="cloudCover"
-              checked={weatherOption === "cloudCover"}
-              onChange={() => handleWeatherMapChange("cloudCover")}
-            ></input>
+        <input className="temperature-radio-button"
+          type="radio"
+          value="temperature"
+          checked={weatherOption === "temperature"}
+          onChange={() => handleWeatherMapChange("temperature")}
+        ></input>
+        <label>
+          Precipitation
           </label>
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
+        <input className="precipitation-radio-button"
+          type="radio"
+          value="precipitation"
+          checked={weatherOption === "precipitation"}
+          onChange={() => handleWeatherMapChange("precipitation")}
+        ></input>
+        <label>
+          Cloud Cover
+          </label>
+        <input className="cloud-cover-radio-button"
+          type="radio"
+          value="cloudCover"
+          checked={weatherOption === "cloudCover"}
+          onChange={() => handleWeatherMapChange("cloudCover")}
+        ></input>
+      </label>
+      <input className="submit-button"
+      type="submit" value="Submit" />
+    </form>
+
     );
   }
 
